@@ -186,10 +186,19 @@ a mensagem de erro deve estar presente no campo do email
 Clicar no cadastro cliente2
 
      Click Element    css:a[href="Cadastro_test.php"]
+a mensagem de erro deve estar presente no campo de confirmar senha
+        Location Should Be    http://localhost/GreenCartGit/GreenCart/Cadastro_test.php
+        Element Should Be Visible    locator=error-confirmPassword
+        Take Screenshot
 
 a mensagem de erro deve estar presente no campo do telefone
         Location Should Be    http://localhost/GreenCartGit/GreenCart/Cadastro_test.php            #http://localhost/GreenCart/Cadastro_test.php  clovis
         Element Should Be Visible    locator=error-phone 
+        Take Screenshot
+
+a mensagem de erro deve estar presente no campo de quantidade
+        Location Should Be    http://localhost/GreenCartGit/GreenCart/produtos.php
+        Element Should Be Visible    locator=error-qtd_produto
         Take Screenshot
 
 Preencher quantidade suficiente para saldo insuficiente
@@ -203,8 +212,8 @@ Clicar em cadastro de comprador
 Clicar no botao de Comprar na aba de produto
     Click Element    css:button[class="comprar-botao"]
 
-Preencher quantidade de produto
-    Input Text    locator=qtd_produto    text=1000
+Preencher quantidade de produto com qtd_produto = "${qtd_produto}"
+    Input Text    locator=qtd_produto    text=${qtd_produto}
 
 Clicar em comprar produto
     Click Button    Comprar

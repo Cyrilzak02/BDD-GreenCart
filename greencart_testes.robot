@@ -43,8 +43,6 @@ Caso de Teste 05 - Editar perfil preenchendo nome com caracteres especiais
          And Preencher primeiro nome com "$%¨&*¨%%"
 		 Then a mensagem de erro deve estar presente no campo primeiro nome
 		 
-
-
 Caso de Teste 06 - Cadastrar produto com data de colheita inválida
          [Documentation]     Verifica que o sistema mostra uma mensagem de erro ao registrar um produto inseririndo uma data de colheita inválida
          Given o usuario acessa a home page do site GreenCart
@@ -82,29 +80,31 @@ Caso de Teste 10 - Cadastrar cliente2 sem telefone
          Then a mensagem de erro deve estar presente no campo do telefone
 Caso de teste 11 - Comprar mais produtos do que os existentes
         [Documentation]    Verifica que o sistema mostra uma mensagem de erro ao tentar realizar a compra de mais produtos do que o ofertado e impedindo a compra
-        Acessar a home page do site GreenCart
-        Preencher informacoes de login de comprador
-        Clicar na pagina de produtos
-        Clicar no botao de Comprar na aba de produto
-        Preencher quantidade de produto
-        Clicar em comprar produto
+        Given o usuario acessa a home page do site GreenCart
+        When Preencher informacoes de login de produtor com login = "expcriativa@gmail.com" e senha = "Joao12345@"
+        And Clicar na pagina de produtos
+        And Clicar no botao de Comprar na aba de produto
+        And Preencher quantidade de produto com qtd_produto = "200"
+        And Clicar em comprar produto
+        Then a mensagem de erro deve estar presente no campo de quantidade
 
 Caso de teste 12 - Cadastro de Comprador com campos senha e confirmar senhas diferentes
         [Documentation]    Verifica que o sistema mostra uma mensagem de erro ao tentar realizar o cadastro inserindo senhas diferentes na aba de cadastro e impede a realização do cadastro
-        Acessar a home page do site GreenCart
-        Clicar em cadastro de comprador
-        Preencher informacoes de cadastro de comprador
+        Given o usuario acessa a home page do site GreenCart
+        When Clicar em cadastro de comprador
+        And Preencher informacoes comprador com first_name = "Murilo" , last_name = "Baduy" , email = "ledoque@gmail.com" , phone = "4199670461" , password = "Doca34%%" , confirmPassword = "Doca35%%" , gender = "male"
+        Then a mensagem de erro deve estar presente no campo de confirmar senha
 
 Caso de Teste 13 - Excluir Perfil do Usuario
         [Documentation]    Verifica que é possivel excluir a conta do sistema
-        Acessar a home page do site GreenCart
-        Preencher informacoes de login de produtor
-        Clicar no icone de usuario
-        Editar perfil
-        Excluir perfil
-        Aceitar alert
+        Given o usuario acessa a home page do site GreenCart
+        When Preencher informacoes de login de produtor com login = "expcriativa@gmail.com" e senha = "Joao12345@"
+        And Clicar no icone de usuario
+        And Editar perfil
+        And Excluir perfil
+        Then Aceitar alert
 
 Caso de Teste 14 - Efetuar Login com uma conta excluida
         [Documentation]    Verifica que se é possivel fazer login no site, mesmo após excluir a conta do sistema
-        Acessar a home page do site GreenCart
+        Given o usuario acessa a home page do site GreenCart
         Preencher Login com conta a ser excluida
