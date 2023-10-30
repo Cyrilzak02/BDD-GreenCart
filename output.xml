@@ -1,148 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231030 12:33:15.946" rpa="false" schemaversion="4">
-<suite id="s1" name="Greencart Testes" source="c:\Users\Administrador\Documents\Códigos\BDD-GreenCart\greencart_testes.robot">
-<test id="s1-t1" name="Caso de Teste 06 - Cadastrar produto com data de colheita inválida" line="48">
+<robot generator="Robot 6.1.1 (Python 3.9.1 on win32)" generated="20231030 19:14:09.282" rpa="false" schemaversion="4">
+<suite id="s1" name="Greencart Testes" source="d:\VerVal\BDD-GreenCart\greencart_testes.robot">
+<test id="s1-t1" name="Caso de Teste 01 - Cadastro Produtor sem email" line="9">
 <kw name="Abrir o navegador" library="greencart_resources" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231030 12:33:16.262" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<msg timestamp="20231030 12:33:16.795" level="WARN">The chromedriver version (117.0.5938.149) detected in PATH at C:\Python\Scripts\chromedriver.exe might not be compatible with the detected chrome version (118.0.5993.90); currently, chromedriver 118.0.5993.70 is recommended for chrome 118.*, so it is advised to delete the driver in PATH and retry</msg>
-<status status="PASS" starttime="20231030 12:33:16.262" endtime="20231030 12:33:18.262"/>
+<msg timestamp="20231030 19:14:09.547" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20231030 19:14:09.547" endtime="20231030 19:14:11.395"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20231030 12:33:18.263" endtime="20231030 12:33:18.402"/>
+<status status="PASS" starttime="20231030 19:14:11.397" endtime="20231030 19:14:11.545"/>
 </kw>
-<status status="PASS" starttime="20231030 12:33:16.261" endtime="20231030 12:33:18.402"/>
+<status status="PASS" starttime="20231030 19:14:09.546" endtime="20231030 19:14:11.545"/>
 </kw>
 <kw name="Given o usuario acessa a home page do site GreenCart" library="greencart_resources">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>url=${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20231030 12:33:18.407" level="INFO">Opening url 'http://localhost:8080/greencart/Login_test.php'</msg>
-<status status="PASS" starttime="20231030 12:33:18.406" endtime="20231030 12:33:18.709"/>
+<msg timestamp="20231030 19:14:11.547" level="INFO">Opening url 'http://localhost/GreenCartGit/GreenCart/Login_test.php'</msg>
+<status status="PASS" starttime="20231030 19:14:11.547" endtime="20231030 19:14:11.944"/>
 </kw>
-<status status="PASS" starttime="20231030 12:33:18.404" endtime="20231030 12:33:18.710"/>
+<status status="PASS" starttime="20231030 19:14:11.546" endtime="20231030 19:14:11.945"/>
 </kw>
-<kw name="When Preencher informacoes de login de produtor com login = &quot;expcriativa@gmail.com&quot; e senha = &quot;Joao12345@&quot;" library="greencart_resources" sourcename="Preencher informacoes de login de produtor com login = &quot;${login}&quot; e senha = &quot;${senha}&quot;">
+<kw name="When Clicar no cadastro produtor" library="greencart_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:a[href="Cadastro_produtor.php"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231030 19:14:11.947" level="INFO">Clicking element 'css:a[href="Cadastro_produtor.php"]'.</msg>
+<status status="PASS" starttime="20231030 19:14:11.946" endtime="20231030 19:14:12.240"/>
+</kw>
+<status status="PASS" starttime="20231030 19:14:11.946" endtime="20231030 19:14:12.240"/>
+</kw>
+<kw name="And Preencher informacoes produtor com nome empresa &quot;Wagner E Co&quot; , email &quot;&quot;,telefone &quot;4192882882&quot; ,cnpj &quot;77223303000106&quot; , senha &quot;Wagner@123&quot; ,senha confirmacao &quot;Wagner@123&quot;,insta &quot;Wagner123&quot;" library="greencart_resources" sourcename="Preencher informacoes produtor com nome empresa &quot;${nome_empresa}&quot; , email &quot;${email}&quot;,telefone &quot;${number}&quot; ,cnpj &quot;${CNPJ}&quot; , senha &quot;${password}&quot; ,senha confirmacao &quot;${confirmPassword}&quot;,insta &quot;${instagram_prod}&quot;">
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>locator=login</arg>
-<arg>text=${login}</arg>
+<arg>locator=nome_empresa</arg>
+<arg>text= ${nome_empresa}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231030 12:33:18.715" level="INFO">Typing text 'expcriativa@gmail.com' into text field 'login'.</msg>
-<status status="PASS" starttime="20231030 12:33:18.714" endtime="20231030 12:33:18.889"/>
+<msg timestamp="20231030 19:14:12.244" level="INFO">Typing text ' Wagner E Co' into text field 'nome_empresa'.</msg>
+<status status="PASS" starttime="20231030 19:14:12.242" endtime="20231030 19:14:12.383"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>locator=senha</arg>
-<arg>text=${senha}</arg>
+<arg>locator=email</arg>
+<arg>text=${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231030 12:33:18.890" level="INFO">Typing text 'Joao12345@' into text field 'senha'.</msg>
-<status status="PASS" starttime="20231030 12:33:18.889" endtime="20231030 12:33:19.001"/>
+<msg timestamp="20231030 19:14:12.385" level="INFO">Typing text '' into text field 'email'.</msg>
+<status status="PASS" starttime="20231030 19:14:12.384" endtime="20231030 19:14:12.488"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=number</arg>
+<arg>text=${number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231030 19:14:12.489" level="INFO">Typing text '4192882882' into text field 'number'.</msg>
+<status status="PASS" starttime="20231030 19:14:12.488" endtime="20231030 19:14:12.658"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=CNPJ</arg>
+<arg>text=${CNPJ}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231030 19:14:12.660" level="INFO">Typing text '77223303000106' into text field 'CNPJ'.</msg>
+<status status="PASS" starttime="20231030 19:14:12.659" endtime="20231030 19:14:12.824"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=password</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231030 19:14:12.825" level="INFO">Typing text 'Wagner@123' into text field 'password'.</msg>
+<status status="PASS" starttime="20231030 19:14:12.824" endtime="20231030 19:14:12.945"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=confirmPassword</arg>
+<arg>text=${confirmPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231030 19:14:12.947" level="INFO">Typing text 'Wagner@123' into text field 'confirmPassword'.</msg>
+<status status="PASS" starttime="20231030 19:14:12.946" endtime="20231030 19:14:13.055"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=instagram_prod</arg>
+<arg>text=${instagram_prod}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231030 19:14:13.056" level="INFO">Typing text 'Wagner123' into text field 'instagram_prod'.</msg>
+<status status="PASS" starttime="20231030 19:14:13.055" endtime="20231030 19:14:13.155"/>
 </kw>
 <kw name="Submit Form" library="SeleniumLibrary">
 <doc>Submits a form identified by ``locator``.</doc>
-<msg timestamp="20231030 12:33:19.003" level="INFO">Submitting form 'None'.</msg>
-<status status="PASS" starttime="20231030 12:33:19.002" endtime="20231030 12:33:19.303"/>
+<msg timestamp="20231030 19:14:13.156" level="INFO">Submitting form 'None'.</msg>
+<status status="PASS" starttime="20231030 19:14:13.155" endtime="20231030 19:14:13.199"/>
 </kw>
+<status status="PASS" starttime="20231030 19:14:12.241" endtime="20231030 19:14:13.199"/>
+</kw>
+<kw name="Then mensagem de erro deve estar presente no campo email" library="greencart_resources">
 <kw name="Location Should Be" library="SeleniumLibrary">
-<arg>http://localhost:8080/greencart/index.php</arg>
+<arg>http://localhost/GreenCartGit/GreenCart/Cadastro_produtor.php</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<msg timestamp="20231030 12:33:19.311" level="INFO">Current location is 'http://localhost:8080/greencart/index.php'.</msg>
-<status status="PASS" starttime="20231030 12:33:19.303" endtime="20231030 12:33:19.311"/>
+<msg timestamp="20231030 19:14:13.231" level="INFO">Current location is 'http://localhost/GreenCartGit/GreenCart/Cadastro_produtor.php'.</msg>
+<status status="PASS" starttime="20231030 19:14:13.201" endtime="20231030 19:14:13.231"/>
 </kw>
-<status status="PASS" starttime="20231030 12:33:18.712" endtime="20231030 12:33:19.311"/>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=error-email</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231030 19:14:13.266" level="INFO">Element 'error-email' is displayed.</msg>
+<status status="PASS" starttime="20231030 19:14:13.231" endtime="20231030 19:14:13.267"/>
 </kw>
-<kw name="And Clicar no icone de usuario" library="greencart_resources">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>css:a[href="User.php"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231030 12:33:19.314" level="INFO">Clicking element 'css:a[href="User.php"]'.</msg>
-<status status="PASS" starttime="20231030 12:33:19.313" endtime="20231030 12:33:19.469"/>
-</kw>
-<status status="PASS" starttime="20231030 12:33:19.312" endtime="20231030 12:33:19.470"/>
-</kw>
-<kw name="And Clicar em registrar produto" library="greencart_resources">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>locator=Registrar Produto</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231030 12:33:19.474" level="INFO">Clicking button 'Registrar Produto'.</msg>
-<status status="PASS" starttime="20231030 12:33:19.472" endtime="20231030 12:33:19.633"/>
-</kw>
-<status status="PASS" starttime="20231030 12:33:19.471" endtime="20231030 12:33:19.633"/>
-</kw>
-<kw name="And Prencher informações do produto com nome_produto = &quot;Maca&quot; , qtd_produto = &quot;23&quot; , descricao_produto =&quot;muito suculenta&quot; , preco_produto = &quot;2.5&quot; , data_colheta = &quot;12/12&quot;" library="greencart_resources" sourcename="Prencher informações do produto com nome_produto = &quot;${nome_produto}&quot; , qtd_produto = &quot;${qtd_produto}&quot; , descricao_produto =&quot;${descricao_produto}&quot; , preco_produto = &quot;${preco_produto}&quot; , data_colheta = &quot;${data_colheta}&quot;">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>locator=nome_produto</arg>
-<arg>text= ${nome_produto}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231030 12:33:19.638" level="INFO">Typing text ' Maca' into text field 'nome_produto'.</msg>
-<status status="PASS" starttime="20231030 12:33:19.635" endtime="20231030 12:33:19.767"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>locator=qtd_produto</arg>
-<arg>text= ${qtd_produto}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231030 12:33:19.769" level="INFO">Typing text ' 23' into text field 'qtd_produto'.</msg>
-<status status="PASS" starttime="20231030 12:33:19.767" endtime="20231030 12:33:19.915"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>locator=descricao_produto</arg>
-<arg>text= ${descricao_produto}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231030 12:33:19.917" level="INFO">Typing text ' muito suculenta' into text field 'descricao_produto'.</msg>
-<status status="PASS" starttime="20231030 12:33:19.917" endtime="20231030 12:33:20.025"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>locator=preco_produto</arg>
-<arg>text=${preco_produto}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231030 12:33:20.026" level="INFO">Typing text '2.5' into text field 'preco_produto'.</msg>
-<status status="PASS" starttime="20231030 12:33:20.026" endtime="20231030 12:33:20.127"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>locator=data_colheta</arg>
-<arg>text= ${data_colheta}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231030 12:33:20.128" level="INFO">Typing text ' 12/12' into text field 'data_colheta'.</msg>
-<status status="PASS" starttime="20231030 12:33:20.127" endtime="20231030 12:33:20.265"/>
-</kw>
-<kw name="Press Key" library="SeleniumLibrary">
-<arg>id=nome_produto</arg>
-<arg>\\13</arg>
-<doc>*DEPRECATED in SeleniumLibrary 4.0.* use `Press Keys` instead.</doc>
-<msg timestamp="20231030 12:33:20.266" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
-<status status="PASS" starttime="20231030 12:33:20.265" endtime="20231030 12:33:20.405"/>
-</kw>
-<status status="PASS" starttime="20231030 12:33:19.634" endtime="20231030 12:33:20.405"/>
-</kw>
-<kw name="Then uma mensagem de erro sobre a data inválida preenchida deve ser visível" library="greencart_resources">
-<kw name="Take Screenshot" library="Screenshot">
-<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
-<msg timestamp="20231030 12:33:20.410" level="WARN">Taking screenshot failed: Taking screenshots is not supported on this platform by default. See library documentation for details.
-Make sure tests are run with a physical or virtual display.</msg>
-<msg timestamp="20231030 12:33:20.410" level="INFO" html="true">&lt;a href="screenshot_1.jpg"&gt;&lt;img src="screenshot_1.jpg" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20231030 12:33:20.407" endtime="20231030 12:33:20.410"/>
-</kw>
-<status status="PASS" starttime="20231030 12:33:20.406" endtime="20231030 12:33:20.410"/>
+<status status="PASS" starttime="20231030 19:14:13.200" endtime="20231030 19:14:13.267"/>
 </kw>
 <kw name="Fechar o navegador" library="greencart_resources" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20231030 12:33:21.127" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20231030 12:33:20.410" endtime="20231030 12:33:21.127"/>
+<msg timestamp="20231030 19:14:13.506" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231030 19:14:13.270" endtime="20231030 19:14:13.506"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231030 12:33:21.127" endtime="20231030 12:33:24.332"/>
+<status status="PASS" starttime="20231030 19:14:13.506" endtime="20231030 19:14:15.675"/>
 </kw>
-<status status="PASS" starttime="20231030 12:33:20.410" endtime="20231030 12:33:24.333"/>
+<status status="PASS" starttime="20231030 19:14:13.269" endtime="20231030 19:14:15.675"/>
 </kw>
-<doc>Verifica que o sistema mostra uma mensagem de erro ao registrar um produto inseririndo uma data de colheita inválida</doc>
-<status status="PASS" starttime="20231030 12:33:16.259" endtime="20231030 12:33:24.334"/>
+<doc>Verifica que o sistema mostra uma mensagem de erro na caixa de email e nao deixa o usuario se cadastrar</doc>
+<status status="PASS" starttime="20231030 19:14:09.545" endtime="20231030 19:14:15.676"/>
 </test>
 <doc>Essa suíte testa o site da GreenCart</doc>
-<status status="PASS" starttime="20231030 12:33:15.953" endtime="20231030 12:33:24.334"/>
+<status status="PASS" starttime="20231030 19:14:09.288" endtime="20231030 19:14:15.678"/>
 </suite>
 <statistics>
 <total>
@@ -155,9 +134,5 @@ Make sure tests are run with a physical or virtual display.</msg>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20231030 12:33:16.795" level="WARN">The chromedriver version (117.0.5938.149) detected in PATH at C:\Python\Scripts\chromedriver.exe might not be compatible with the detected chrome version (118.0.5993.90); currently, chromedriver 118.0.5993.70 is recommended for chrome 118.*, so it is advised to delete the driver in PATH and retry</msg>
-<msg timestamp="20231030 12:33:20.266" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
-<msg timestamp="20231030 12:33:20.410" level="WARN">Taking screenshot failed: Taking screenshots is not supported on this platform by default. See library documentation for details.
-Make sure tests are run with a physical or virtual display.</msg>
 </errors>
 </robot>

@@ -46,7 +46,7 @@ Caso de Teste 05 - Editar perfil preenchendo nome com caracteres especiais
 Caso de Teste 06 - Cadastrar produto com data de colheita inválida
          [Documentation]     Verifica que o sistema mostra uma mensagem de erro ao registrar um produto inseririndo uma data de colheita inválida
          Given o usuario acessa a home page do site GreenCart
-         When Preencher informacoes de login de produtor com login = "expcriativa@gmail.com" e senha = "Joao12345@"
+         When Preencher informacoes de login de produtor com login = "mauro@hotmail.com" e senha = "Mauro12345@"
          And Clicar no icone de usuario
          And Clicar em registrar produto
          And Prencher informações do produto com nome_produto = "Maca" , qtd_produto = "23" , descricao_produto ="muito suculenta" , preco_produto = "2.5" , data_colheta = "12/12"
@@ -81,7 +81,7 @@ Caso de Teste 10 - Cadastrar cliente2 sem telefone
 Caso de teste 11 - Comprar mais produtos do que os existentes
         [Documentation]    Verifica que o sistema mostra uma mensagem de erro ao tentar realizar a compra de mais produtos do que o ofertado e impedindo a compra
         Given o usuario acessa a home page do site GreenCart
-        When Preencher informacoes de login de produtor com login = "expcriativa@gmail.com" e senha = "Joao12345@"
+        When Preencher informacoes de login de comprador com login = "expcriativa@gmail.com" e senha = "Joao12345@"
         And Clicar na pagina de produtos
         And Clicar no botao de Comprar na aba de produto
         And Preencher quantidade de produto com qtd_produto = "200"
@@ -98,7 +98,7 @@ Caso de teste 12 - Cadastro de Comprador com campos senha e confirmar senhas dif
 Caso de Teste 13 - Excluir Perfil do Usuario
         [Documentation]    Verifica que é possivel excluir a conta do sistema
         Given o usuario acessa a home page do site GreenCart
-        When Preencher informacoes de login de produtor com login = "expcriativa@gmail.com" e senha = "Joao12345@"
+        When Preencher informacoes de login de comprador com login = "dinosauro@gmail.com" e senha = "Senha@23"
         And Clicar no icone de usuario
         And Editar perfil
         And Excluir perfil

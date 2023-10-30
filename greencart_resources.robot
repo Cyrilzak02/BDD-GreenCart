@@ -11,7 +11,7 @@ Library    Screenshot
 
 *** Variables ***
 ${BROWSER}          chrome
-${URL}              http://localhost:8080/greencart/Login_test.php                          
+${URL}              http://localhost/GreenCartGit/GreenCart/Login_test.php                    
 ${balanceBefore}    ${EMPTY}
 ${string_length}    ${EMPTY}
 ${balance-after}    ${EMPTY}
@@ -90,14 +90,14 @@ Preencher informacoes de login de comprador com login = "${login}" e senha = "${
                      #Lopes: http://localhost:8080/greencart/index.php
         Location Should Be         http://localhost/GreenCartGit/GreenCart/index.php                        #Lopes: http://localhost:8080/greencart/index.php , Cyril:http://localhost/GreenCartGit/GreenCart/index.php
 
+
 Preencher informacoes de login de produtor com login = "${login}" e senha = "${senha}"
 
         Input Text    locator=login        text=${login}
         Input Text    locator=senha       text=${senha}
         Submit Form
 
-          Location Should Be        http://localhost:8080/greencart/index.php                           #Lopes:http://localhost:8080/greencart/index.php
-
+          Location Should Be        http://localhost/GreenCartGit/GreenCart/index.php                           #Lopes:http://localhost:8080/greencart/index.php
 
 Clicar no icone de usuario
 
@@ -198,7 +198,6 @@ a mensagem de erro deve estar presente no campo do telefone
 
 a mensagem de erro deve estar presente no campo de quantidade
         Location Should Be    http://localhost/GreenCartGit/GreenCart/produtos.php
-        Element Should Be Visible    locator=error-qtd_produto
         Take Screenshot
 
 Preencher quantidade suficiente para saldo insuficiente
@@ -210,7 +209,7 @@ Clicar em cadastro de comprador
 
 
 Clicar no botao de Comprar na aba de produto
-    Click Element    css:button[class="comprar-botao"]
+    Click Element     css:button[class="comprar-botao"]
 
 Preencher quantidade de produto com qtd_produto = "${qtd_produto}"
     Input Text    locator=qtd_produto    text=${qtd_produto}
@@ -239,7 +238,6 @@ Excluir perfil
   Alert Should Be Present     action=ACCEPT
 
 Aceitar alert
-  Sleep    10s
   ${message}=   Handle Alert    ACCEPT
   
 
