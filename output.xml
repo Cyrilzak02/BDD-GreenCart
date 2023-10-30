@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.1 on win32)" generated="20231029 21:55:38.624" rpa="false" schemaversion="4">
+<suite id="s1" name="Greencart Testes" source="d:\VerVal\BDD-GreenCart\greencart_testes.robot">
+<test id="s1-t1" name="Caso de Teste 10 - Cadastrar cliente2 sem telefone" line="77">
+<kw name="Abrir o navegador" library="greencart_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231029 21:55:38.873" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20231029 21:55:38.872" endtime="20231029 21:55:40.640"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231029 21:55:40.640" endtime="20231029 21:55:40.767"/>
+</kw>
+<status status="PASS" starttime="20231029 21:55:38.871" endtime="20231029 21:55:40.768"/>
+</kw>
+<kw name="Given o usuario acessa a home page do site GreenCart" library="greencart_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231029 21:55:40.772" level="INFO">Opening url 'http://localhost/GreenCartGit/GreenCart/Login_test.php'</msg>
+<status status="PASS" starttime="20231029 21:55:40.771" endtime="20231029 21:55:41.195"/>
+</kw>
+<status status="PASS" starttime="20231029 21:55:40.770" endtime="20231029 21:55:41.197"/>
+</kw>
+<kw name="When Clicar no cadastro comprador" library="greencart_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:a[href="Cadastro_test.php"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231029 21:55:41.203" level="INFO">Clicking element 'css:a[href="Cadastro_test.php"]'.</msg>
+<status status="PASS" starttime="20231029 21:55:41.201" endtime="20231029 21:55:41.470"/>
+</kw>
+<status status="PASS" starttime="20231029 21:55:41.199" endtime="20231029 21:55:41.470"/>
+</kw>
+<kw name="And Preencher informacoes comprador com first_name = &quot;Clovis&quot; , last_name = &quot;Neto&quot; , email = &quot;salsa@salsa.com&quot; , phone = &quot;&quot; , password = &quot;Wagner@123&quot; , confirmPassword = &quot;Wagner@123&quot; , gender = &quot;male&quot;" library="greencart_resources" sourcename="Preencher informacoes comprador com first_name = &quot;${first_name}&quot; , last_name = &quot;${last_name}&quot; , email = &quot;${email}&quot; , phone = &quot;${phone}&quot; , password = &quot;${password}&quot; , confirmPassword = &quot;${confirmPassword}&quot; , gender = &quot;${gender}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=first_name</arg>
+<arg>text=${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231029 21:55:41.474" level="INFO">Typing text 'Clovis' into text field 'first_name'.</msg>
+<status status="PASS" starttime="20231029 21:55:41.473" endtime="20231029 21:55:41.634"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=last_name</arg>
+<arg>text=${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231029 21:55:41.635" level="INFO">Typing text 'Neto' into text field 'last_name'.</msg>
+<status status="PASS" starttime="20231029 21:55:41.634" endtime="20231029 21:55:41.739"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=email</arg>
+<arg>text=${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231029 21:55:41.741" level="INFO">Typing text 'salsa@salsa.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20231029 21:55:41.739" endtime="20231029 21:55:41.865"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=phone</arg>
+<arg>text=${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231029 21:55:41.866" level="INFO">Typing text '' into text field 'phone'.</msg>
+<status status="PASS" starttime="20231029 21:55:41.865" endtime="20231029 21:55:41.957"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=password</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231029 21:55:41.958" level="INFO">Typing text 'Wagner@123' into text field 'password'.</msg>
+<status status="PASS" starttime="20231029 21:55:41.957" endtime="20231029 21:55:42.064"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=confirmPassword</arg>
+<arg>text=${confirmPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231029 21:55:42.065" level="INFO">Typing text 'Wagner@123' into text field 'confirmPassword'.</msg>
+<status status="PASS" starttime="20231029 21:55:42.064" endtime="20231029 21:55:42.160"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>group_name=gender</arg>
+<arg>value=${gender}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20231029 21:55:42.161" level="INFO">Selecting 'male' from radio button 'gender'.</msg>
+<status status="PASS" starttime="20231029 21:55:42.160" endtime="20231029 21:55:42.227"/>
+</kw>
+<kw name="Submit Form" library="SeleniumLibrary">
+<doc>Submits a form identified by ``locator``.</doc>
+<msg timestamp="20231029 21:55:42.229" level="INFO">Submitting form 'None'.</msg>
+<status status="PASS" starttime="20231029 21:55:42.228" endtime="20231029 21:55:42.278"/>
+</kw>
+<status status="PASS" starttime="20231029 21:55:41.472" endtime="20231029 21:55:42.279"/>
+</kw>
+<kw name="Then a mensagem de erro deve estar presente no campo do telefone" library="greencart_resources">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>http://localhost/GreenCartGit/GreenCart/Cadastro_test.php</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20231029 21:55:42.304" level="INFO">Current location is 'http://localhost/GreenCartGit/GreenCart/Cadastro_test.php'.</msg>
+<status status="PASS" starttime="20231029 21:55:42.280" endtime="20231029 21:55:42.305"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=error-phone</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231029 21:55:42.336" level="INFO">Element 'error-phone' is displayed.</msg>
+<status status="PASS" starttime="20231029 21:55:42.305" endtime="20231029 21:55:42.336"/>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<msg timestamp="20231029 21:55:42.338" level="WARN">Taking screenshot failed: Taking screenshots is not supported on this platform by default. See library documentation for details.
+Make sure tests are run with a physical or virtual display.</msg>
+<msg timestamp="20231029 21:55:42.341" level="INFO" html="true">&lt;a href="screenshot_1.jpg"&gt;&lt;img src="screenshot_1.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231029 21:55:42.336" endtime="20231029 21:55:42.341"/>
+</kw>
+<status status="PASS" starttime="20231029 21:55:42.280" endtime="20231029 21:55:42.341"/>
+</kw>
+<kw name="Fechar o navegador" library="greencart_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231029 21:55:42.515" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231029 21:55:42.344" endtime="20231029 21:55:42.515"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231029 21:55:42.516" endtime="20231029 21:55:44.678"/>
+</kw>
+<status status="PASS" starttime="20231029 21:55:42.343" endtime="20231029 21:55:44.679"/>
+</kw>
+<doc>Verifica que o sistema mostra uma mensagem de erro ao não inserir um telefone</doc>
+<status status="PASS" starttime="20231029 21:55:38.870" endtime="20231029 21:55:44.681"/>
+</test>
+<doc>Essa suíte testa o site da GreenCart</doc>
+<status status="PASS" starttime="20231029 21:55:38.631" endtime="20231029 21:55:44.686"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Greencart Testes">Greencart Testes</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231029 21:55:42.338" level="WARN">Taking screenshot failed: Taking screenshots is not supported on this platform by default. See library documentation for details.
+Make sure tests are run with a physical or virtual display.</msg>
+</errors>
+</robot>
