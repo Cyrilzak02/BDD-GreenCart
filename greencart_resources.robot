@@ -11,7 +11,7 @@ Library    Screenshot
 
 *** Variables ***
 ${BROWSER}          chrome
-${URL}              http://localhost/GreenCartGit/GreenCart/Login_test.php                            
+${URL}              http://localhost:8080/greencart/Login_test.php                          
 ${balanceBefore}    ${EMPTY}
 ${string_length}    ${EMPTY}
 ${balance-after}    ${EMPTY}
@@ -90,13 +90,13 @@ Preencher informacoes de login de comprador com login = "${login}" e senha = "${
                      #Lopes: http://localhost:8080/greencart/index.php
         Location Should Be         http://localhost/GreenCartGit/GreenCart/index.php                        #Lopes: http://localhost:8080/greencart/index.php , Cyril:http://localhost/GreenCartGit/GreenCart/index.php
 
-Preencher informacoes de login de produtor
+Preencher informacoes de login de produtor com login = "${login}" e senha = "${senha}"
 
-        Input Text    locator=login        text=exp@gmail.com
-        Input Text    locator=senha       text=Joao12345@
+        Input Text    locator=login        text=${login}
+        Input Text    locator=senha       text=${senha}
         Submit Form
 
-        Location Should Be         http://localhost/GreenCartGit/GreenCart/index.php                                #Lopes:http://localhost:8080/greencart/index.php
+          Location Should Be        http://localhost:8080/greencart/index.php                           #Lopes:http://localhost:8080/greencart/index.php
 
 
 Clicar no icone de usuario
@@ -135,14 +135,16 @@ a mensagem de erro deve estar presente no campo primeiro nome
 Clicar em registrar produto
     Click Button    locator=Registrar Produto
 
-Prencher informações do produto com data de colheita invalida
-    Input Text    locator=nome_produto        text= Maca
-    Input Text    locator=qtd_produto      text=23
-    Input Text    locator=descricao_produto       text=muito suculenta
-    Input Text    locator=preco_produto  text=3.5
-    Input Text    locator=data_colheta     text=2333
+Prencher informações do produto com nome_produto = "${nome_produto}" , qtd_produto = "${qtd_produto}" , descricao_produto ="${descricao_produto}" , preco_produto = "${preco_produto}" , data_colheta = "${data_colheta}"
+    Input Text    locator=nome_produto        text= ${nome_produto}
+    Input Text    locator=qtd_produto      text= ${qtd_produto}
+    Input Text    locator=descricao_produto       text= ${descricao_produto}
+    Input Text    locator=preco_produto  text=${preco_produto}
+    Input Text    locator=data_colheta     text= ${data_colheta}
     Press Key    id=nome_produto    \\13
 
+uma mensagem de erro sobre a data inválida preenchida deve ser visível
+    Take Screenshot
 Clicar no cadastro comprador
 
    Click Element    css:a[href="Cadastro_test.php"]

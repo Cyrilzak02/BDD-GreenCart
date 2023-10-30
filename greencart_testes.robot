@@ -46,13 +46,13 @@ Caso de Teste 05 - Editar perfil preenchendo nome com caracteres especiais
 
 
 Caso de Teste 06 - Cadastrar produto com data de colheita inválida
-         [Documentation]     Verifica que o sistema mostra uma mensagem de erro ao inserir uma data de colheita inválida
-         Acessar a home page do site GreenCart
-         Preencher informacoes de login de produtor
-         Clicar no icone de usuario
-         Clicar em registrar produto
-        Prencher informações do produto com data de colheita invalida
-
+         [Documentation]     Verifica que o sistema mostra uma mensagem de erro ao registrar um produto inseririndo uma data de colheita inválida
+         Given o usuario acessa a home page do site GreenCart
+         When Preencher informacoes de login de produtor com login = "expcriativa@gmail.com" e senha = "Joao12345@"
+         And Clicar no icone de usuario
+         And Clicar em registrar produto
+         And Prencher informações do produto com nome_produto = "Maca" , qtd_produto = "23" , descricao_produto ="muito suculenta" , preco_produto = "2.5" , data_colheta = "12/12"
+            Then uma mensagem de erro sobre a data inválida preenchida deve ser visível
 
 Caso de Teste 07 - Cadastrar comprador sem primeiro nome
          [Documentation]     Verifica que o sistema mostra uma mensagem de erro ao não inserir um primeiro nome
